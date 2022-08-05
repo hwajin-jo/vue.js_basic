@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datatext1 예제</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p> {{ myPrice * 1.08 }} </p>
+        <p> {{ "반갑습니다 " + myName + "님" }} </p>
+        <p> {{ myName.substr(0,1) }} </p>
+    </div>
+    
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+                myPrice : 500,
+                myName : '홍길동' 
+            }
+        })
+    </script>
+</body>
+</html>
