@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js Sample</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h2>배열 데이터를 리스트로 표시하는 예제</h2>
+    <div id="app">
+        <ul>
+            <li v-for="item in myArray">{{ item }}</li>
+        </ul>
+        <button v-on:click="sortData(myArray)">소트</button><br>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                myArray:['one', 'two', 'three', 'four', 'five']
+            },
+            methods: {
+                sortData : function(listdata) {
+                    listdata.sort(function(a,b) {
+                        return (a < b ? -1 : 1);
+                    });
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

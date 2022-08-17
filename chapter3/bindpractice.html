@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<style>
+			.blue-underline {
+				color: blue;
+				text-decoration: underline;
+			}
+			.strike-through {
+				text-decoration: line-through;
+				color: lightgray;
+			}
+			.dark {
+				background-color:darkgray;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>v-bind 클래스 속성 지정</h2>
+		<div id="app">
+            <p><a v-bind:href = "myURL"> 네이버로 연결 </a></p>
+            <p><img v-bind:src="fileName">face2.png표시</img>></p>
+			<p v-bind:align="myAlignLeft">텍스트를 왼쪽 정렬</p>
+			<p v-bind:align="myAlignRight">텍스트를 오른쪽 정렬</p>
+			<p v-bind:align="myAlignCenter">텍스트를 가운데 정렬</p>
+			<p v-bind:style="{ color : myColor }">인라인 스타일로 글자색을 빨간색으로</p>
+			<p v-bind:style="{ color : myColor, fontSize : myFontSize}"> 인라인 스타일로 글자크기를 150% 크게 빨간색으로</p>
+			<p v-bind:style="{ color : myColor, fontSize : myFontSize, backgroundColor : myBackColor}"> 인라인 스타일로 글자크기를 150% 크게 빨간색으로 배경은 노란색으로 </p>
+			<p v-bind:class="blueClass">blue-underline class 지정</p>
+			<p v-bind:class="[myClass, blueClass]">blue-underline, strike-through class 지정</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					myURL : 'https://naver.com',
+					fileName : 'face2.png',
+					myAlignLeft : 'left',
+					myAlignRight : 'right',
+					myAlignCenter : 'center',
+					myColor : 'red',
+					myFontSize : '150%',
+					myBackColor : 'yellow',
+					myClass : 'strike-through',
+					blueClass : 'blue-underline'
+				
+				}
+			})
+		</script>
+
+
+	</body>
+</html>
